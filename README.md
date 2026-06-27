@@ -1,3 +1,7 @@
+<p align="center">
+  <img src="./assets/mobbin-cli-header.png" alt="Mobbin CLI unofficial README banner" width="100%">
+</p>
+
 # Mobbin CLI
 
 [![GitHub stars](https://shieldcn.dev/github/stars/opencoredev/mobbin-cli.svg?variant=branded&mode=dark)](https://github.com/opencoredev/mobbin-cli/stargazers)
