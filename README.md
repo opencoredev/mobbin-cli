@@ -1,17 +1,15 @@
-<p align="center">
-  <img src="./assets/mobbin-cli-header.png" alt="Mobbin CLI unofficial README banner" width="100%">
-</p>
-
 # Mobbin CLI
 
-[![GitHub stars](https://shieldcn.dev/github/stars/opencoredev/mobbin-cli.svg?variant=branded&mode=dark)](https://github.com/opencoredev/mobbin-cli/stargazers)
-[![GitHub issues](https://shieldcn.dev/github/issues/opencoredev/mobbin-cli.svg?variant=secondary&mode=dark)](https://github.com/opencoredev/mobbin-cli/issues)
-[![Last commit](https://shieldcn.dev/github/last-commit/opencoredev/mobbin-cli.svg?variant=outline&mode=dark)](https://github.com/opencoredev/mobbin-cli/commits/main)
-[![Follow on X](https://shieldcn.dev/x/follow/leodev.svg?variant=branded&mode=dark)](https://x.com/leodev)
+<p align="center">
+  <a href="https://github.com/opencoredev/mobbin-cli"><img alt="stars" src="https://shieldcn.dev/github/opencoredev/mobbin-cli/stars.svg" /></a>
+  <a href="https://x.com/leodev"><img alt="follow" src="https://shieldcn.dev/x/follow/leodev.svg" /></a>
+</p>
 
-Mobbin visual search from your terminal. Log in once with Mobbin OAuth, store the token locally, and let agents search screens, flows, and page sections without keeping a Codex MCP server mounted.
+<p align="center">
+  Mobbin visual search from your terminal. Log in once with Mobbin OAuth, store the token locally, and let agents search screens, flows, and page sections without keeping a Codex MCP server mounted.
+</p>
 
-## Why This Exists
+## Overview
 
 Codex MCP tools are great when they are active, but they also add startup clutter and depend on the agent client exposing the right tool surface. `mobbin-cli` keeps Mobbin access as a normal command:
 
