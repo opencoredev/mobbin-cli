@@ -112,8 +112,25 @@ src/commands.ts  command handlers
 bun install
 bun test
 bun run check
+bun run pack:check
 mobbin status --check
 mobbin search "login screen" --platform ios --limit 1 --json
 ```
 
 The CLI is Bun-native and intentionally has no dev server. Keep examples copy-pasteable and avoid committing credentials from `~/.config/mobbin-cli`.
+
+## Release
+
+Releases use Changesets plus npm Trusted Publishing.
+
+```bash
+bun run changeset
+```
+
+The GitHub release workflow validates on Depot, then creates a release PR or publishes from the `npm` environment. The npm trusted publisher should point at:
+
+```bash
+npm trust github @opencoredev/mobbin-cli --repo opencoredev/mobbin-cli --file release.yml --env npm --allow-publish
+```
+
+The package must exist on npm before `npm trust` can attach the trusted publisher.
