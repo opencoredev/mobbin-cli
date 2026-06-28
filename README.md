@@ -127,7 +127,9 @@ Releases use Changesets plus npm Trusted Publishing.
 bun run changeset
 ```
 
-The GitHub release workflow validates on Depot, then creates a release PR or publishes from the `npm` environment. The npm trusted publisher should point at:
+The GitHub release workflow validates on the `DEPOT_RUNNER` repo/org variable, then creates a release PR or publishes from the `npm` environment. Set `DEPOT_RUNNER` to `depot-ubuntu-24.04` after the Depot runner is enabled for the repo; until then it falls back to `ubuntu-latest` so releases do not hang in the queue.
+
+The npm trusted publisher should point at:
 
 ```bash
 npm trust github @opencoredev/mobbin-cli --repo opencoredev/mobbin-cli --file release.yml --env npm --allow-publish
