@@ -21,20 +21,34 @@ Codex MCP tools are great when they are active, but they also add startup clutte
 
 ## Install
 
-Clone the repo and install dependencies:
+Install the CLI globally. Bun is recommended because the command runs on Bun:
 
 ```bash
-git clone https://github.com/opencoredev/mobbin-cli.git
-cd mobbin-cli
-bun install
-bun run index.ts --help
+bun add -g @opencoredev/mobbin-cli
+mobbin --help
 ```
 
-For a local global command, symlink the Bun entrypoint somewhere on your `PATH`:
+npm also works when Bun is already installed on your machine:
 
 ```bash
-ln -sf "$PWD/index.ts" ~/.local/bin/mobbin
+npm install -g @opencoredev/mobbin-cli
 mobbin --help
+```
+
+## Agent Skill
+
+Install the companion skill from skills.sh so agents know when and how to use the CLI:
+
+```bash
+npx skills add opencoredev/mobbin-cli@mobbin-cli --global --agent '*' --yes
+```
+
+Then ask the agent to use Mobbin for UI research, screen references, flows, or website sections. The skill teaches the agent to call the local `mobbin` command, inspect downloaded images, and cite Mobbin result URLs.
+
+Copy this prompt into an agent to install everything:
+
+```text
+Install Mobbin CLI and the Mobbin agent skill for this machine. Use Bun to install @opencoredev/mobbin-cli globally, then install the skills.sh skill opencoredev/mobbin-cli@mobbin-cli globally for all supported agents. After installing, run mobbin status --check. If Mobbin is not logged in, run mobbin login and verify with: mobbin search "login screen" --platform ios --limit 1 --json.
 ```
 
 ## Login
@@ -96,6 +110,7 @@ POST /v1/sections/search
 ## Project Structure
 
 ```text
+bin/mobbin       npm executable wrapper
 index.ts          executable entrypoint and public test exports
 src/args.ts      CLI argument parsing
 src/auth.ts      credential loading, login, validation, refresh
@@ -104,11 +119,14 @@ src/mcp.ts       direct JSON-RPC calls to Mobbin's MCP endpoint
 src/http.ts      REST API requests and API errors
 src/search.ts    search payloads, image download helpers, text output
 src/commands.ts  command handlers
+skills/          skills.sh agent skill package
 ```
 
 ## Development
 
 ```bash
+git clone https://github.com/opencoredev/mobbin-cli.git
+cd mobbin-cli
 bun install
 bun test
 bun run check
