@@ -33,7 +33,7 @@
     "design-reference"
   ],
   "bin": {
-    "mobbin": "./bin/mobbin"
+    "mobbin": "bin/mobbin"
   },
   "publishConfig": {
     "access": "public"
