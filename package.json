@@ -1,6 +1,6 @@
 {
   "name": "@opencoredev/mobbin-cli",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Local Mobbin visual-search CLI with one-time OAuth login for agents and humans.",
   "module": "index.ts",
   "exports": {
