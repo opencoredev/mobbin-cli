@@ -8,6 +8,7 @@
     "./package.json": "./package.json"
   },
   "files": [
+    "bin",
     "index.ts",
     "src",
     "README.md",
@@ -32,7 +33,7 @@
     "design-reference"
   ],
   "bin": {
-    "mobbin": "./index.ts"
+    "mobbin": "./bin/mobbin"
   },
   "publishConfig": {
     "access": "public"

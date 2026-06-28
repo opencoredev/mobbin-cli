@@ -1,0 +1,8 @@
+#!/usr/bin/env bun
+import { main } from "../src/cli";
+import { errorMessage } from "../src/utils";
+
+main().catch((error) => {
+  process.stderr.write(`${errorMessage(error)}\n`);
+  process.exit(1);
+});
